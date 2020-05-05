@@ -1,20 +1,19 @@
 <template>
-  <div class="trapezoid"></div>
+  <div class="Trapezoid"></div>
 </template>
 
 <script>
 export default {
-  name: 'trapezoid',
+  name: 'Trapezoid',
 };
 </script>
 
 <style>
-.trapezoid {
-    border-top: 100px solid rgb(35, 178, 214);
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    height: 0;
-    width: 500px;
-    text-align: center;
+.Trapezoid {
+  border-top: 100px solid rgb(35, 178, 214);
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 35%;
 }
 </style>

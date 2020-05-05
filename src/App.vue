@@ -1,7 +1,11 @@
+/* eslint-disable camelcase */
 <template>
   <div id="app">
     <div id="nav">
-      <trapezoid class="header" id="homepage"></trapezoid>
+      <!-- The followings are the navigations in the top of our website -->
+      <Trapezoid class="navigation" id="homepage"></Trapezoid>
+      <LeftTrapezoid class="navigation" id="leftside"></LeftTrapezoid>
+      <RightTrapezoid class="navigation" id="rightside"></RightTrapezoid>
       <router-link to="/">Home</router-link> |
       <router-link to="/GameInterface">GameInterface</router-link> |
       <router-link to="/MapEditor">MapEditor</router-link>
@@ -11,12 +15,16 @@
 </template>
 
 <script>
-import trapezoid from './components/Homepage/trapezoid.vue';
+import Trapezoid from './components/Homepage/Trapezoid.vue';
+import LeftTrapezoid from './components/Homepage/LeftTrapezoid.vue';
+import RightTrapezoid from './components/Homepage/RightTrapezoid.vue';
 
 export default {
   name: 'App',
   components: {
-    trapezoid,
+    Trapezoid,
+    LeftTrapezoid,
+    RightTrapezoid,
   },
 };
 </script>
@@ -44,10 +52,24 @@ export default {
   color: #42b983;
 }
 
-.header#homepage {
+.navigation#homepage {
   position: absolute;
   left: 30%;
   top: 0%;
   z-index: -1;
+}
+
+.navigation#leftside {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  z-index: -2;
+}
+
+.navigation#rightside {
+  position: absolute;
+  left: 60%;
+  top: 0%;
+  z-index: -2;
 }
 </style>
