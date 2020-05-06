@@ -13,7 +13,7 @@ export default {
   border-bottom: 100px solid rgba(21, 165, 170, 0.548);
   border-left: 50px solid transparent;
   height: 0;
-  width: 40%;
+  width: 36.7%;
   text-align: center;
 }
 </style>
