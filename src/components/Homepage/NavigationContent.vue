@@ -1,11 +1,11 @@
 <template>
-  <div class="content">{{content}}</div>
+  <div class="content"><router-link to=path>{{content}}</router-link></div>
 </template>
 
 <script>
 export default {
   name: 'NavigationContent',
-  props: ['content'],
+  props: ['content', 'path'],
 };
 </script>
 

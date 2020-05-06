@@ -1,29 +1,35 @@
-/* eslint-disable camelcase */
 <template>
   <div id="app">
     <div id="nav">
       <!-- The followings are the navigations in the top of our website -->
-      <Trapezoid class="navigation" id="homepage"></Trapezoid>
+      <Trapezoid
+        class="navigation"
+        id="homepage"></Trapezoid>
       <LeftTrapezoid class="navigation" id="game"></LeftTrapezoid>
       <RightTrapezoid class="navigation" id="map"></RightTrapezoid>
+      <!--
       <NavigationContent
         class="NaviContent"
         id="homepage"
         ref="NaviContentHomepage"
-        content="Homepage"></NavigationContent>
+        content="Homepage"
+        path="/"></NavigationContent>
       <NavigationContent
         class="NaviContent"
         id="game"
         ref="NaviContentGameInterface"
-        content="GameInterface"></NavigationContent>
+        content="GameInterface"
+        path="/GameInterface"></NavigationContent>
       <NavigationContent
         class="NaviContent"
         id="map"
         ref="NaviContentMapEditor"
-        content="MapEditor"></NavigationContent>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/GameInterface">GameInterface</router-link> |
-      <router-link to="/MapEditor">MapEditor</router-link>
+        content="MapEditor"
+        path="MapEditor"></NavigationContent>
+      -->
+      <router-link to="/" id="HomepageRouter">Homepage</router-link>
+      <router-link to="/GameInterface" id="GameRouter">GameInterface</router-link>
+      <router-link to="/MapEditor" id="MapRouter">MapEditor</router-link>
     </div>
     <router-view/>
   </div>
@@ -33,7 +39,6 @@
 import Trapezoid from './components/Homepage/Trapezoid.vue';
 import LeftTrapezoid from './components/Homepage/LeftTrapezoid.vue';
 import RightTrapezoid from './components/Homepage/RightTrapezoid.vue';
-import NavigationContent from './components/Homepage/NavigationContent.vue';
 
 export default {
   name: 'App',
@@ -41,7 +46,6 @@ export default {
     Trapezoid,
     LeftTrapezoid,
     RightTrapezoid,
-    NavigationContent,
   },
   created() {
     this.$refs.NaviContentHomepage.SetContent('Homepage');
@@ -66,47 +70,58 @@ export default {
 #nav a {
   font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #ee1a72;
 }
 
 .navigation#homepage {
   position: absolute;
   left: 30%;
   top: 0%;
-  z-index: -1;
+  z-index: -9;
 }
 
 .navigation#game {
   position: absolute;
   left: 0%;
   top: 0%;
-  z-index: -2;
+  z-index: -10;
 }
 
 .navigation#map {
   position: absolute;
   left: 60%;
   top: 0%;
-  z-index: -2;
+  z-index: -10;
 }
 
-.NaviContent {
+#HomepageRouter {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 200%;
   position: absolute;
   top: 5%;
-}
-
-.NaviContent#homepage {
+  z-index: 0;
   left: 44%;
 }
 
-.NaviContent#game {
+#GameRouter {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 200%;
+  position: absolute;
+  top: 5%;
+  z-index: 0;
   left: 8%;
 }
 
-.NaviContent#map {
+#MapRouter {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 200%;
+  position: absolute;
+  top: 5%;
+  z-index: 0;
   left: 77%;
 }
 </style>
