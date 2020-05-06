@@ -7,26 +7,6 @@
         id="homepage"></Trapezoid>
       <LeftTrapezoid class="navigation" id="game"></LeftTrapezoid>
       <RightTrapezoid class="navigation" id="map"></RightTrapezoid>
-      <!--
-      <NavigationContent
-        class="NaviContent"
-        id="homepage"
-        ref="NaviContentHomepage"
-        content="Homepage"
-        path="/"></NavigationContent>
-      <NavigationContent
-        class="NaviContent"
-        id="game"
-        ref="NaviContentGameInterface"
-        content="GameInterface"
-        path="/GameInterface"></NavigationContent>
-      <NavigationContent
-        class="NaviContent"
-        id="map"
-        ref="NaviContentMapEditor"
-        content="MapEditor"
-        path="MapEditor"></NavigationContent>
-      -->
       <router-link to="/" id="HomepageRouter">Homepage</router-link>
       <router-link to="/GameInterface" id="GameRouter">GameInterface</router-link>
       <router-link to="/MapEditor" id="MapRouter">MapEditor</router-link>
