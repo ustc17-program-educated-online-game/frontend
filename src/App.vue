@@ -10,9 +10,6 @@
       <link-button address="/MapEditor" content="地图编辑器" left="55%"></link-button>
       <link-button address="/" content="注册" left="80%"></link-button>
       <link-button address="/" content="登录" left="90%"></link-button>
-      <!-- <router-link to="/" id="HomepageRouter">Homepage</router-link>
-      <router-link to="/GameInterface" id="GameRouter">GameInterface</router-link>
-      <router-link to="/MapEditor" id="MapRouter">MapEditor</router-link> -->
     </div>
     <router-view/>
   </div>
