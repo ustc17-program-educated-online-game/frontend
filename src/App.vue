@@ -4,6 +4,7 @@
       <!-- The followings are the navigations in the top of our website -->
       <navigation-background></navigation-background>
       <navigation-bar></navigation-bar>
+      <logo></logo>
       <router-link to="/" id="HomepageRouter">Homepage</router-link>
       <router-link to="/GameInterface" id="GameRouter">GameInterface</router-link>
       <router-link to="/MapEditor" id="MapRouter">MapEditor</router-link>
@@ -13,14 +14,17 @@
 </template>
 
 <script>
+// the followings are importng part of the navigation part
 import NavigationBackground from './components/Navigation/NavigationBackground.vue';
 import NavigationBar from './components/Navigation/NavigationBar.vue';
+import Logo from './components/Navigation/Logo.vue';
 
 export default {
   name: 'App',
   components: {
     NavigationBackground,
     NavigationBar,
+    Logo,
   },
   created() {
     this.$refs.NaviContentHomepage.SetContent('Homepage');
