@@ -5,9 +5,14 @@
       <navigation-background></navigation-background>
       <navigation-bar></navigation-bar>
       <logo></logo>
-      <router-link to="/" id="HomepageRouter">Homepage</router-link>
+      <link-button address="/" content="主页" left="35%"></link-button>
+      <link-button address="/GameInterface" content="游戏" left="45%"></link-button>
+      <link-button address="/MapEditor" content="地图编辑器" left="55%"></link-button>
+      <link-button address="/" content="注册" left="80%"></link-button>
+      <link-button address="/" content="登录" left="90%"></link-button>
+      <!-- <router-link to="/" id="HomepageRouter">Homepage</router-link>
       <router-link to="/GameInterface" id="GameRouter">GameInterface</router-link>
-      <router-link to="/MapEditor" id="MapRouter">MapEditor</router-link>
+      <router-link to="/MapEditor" id="MapRouter">MapEditor</router-link> -->
     </div>
     <router-view/>
   </div>
@@ -18,6 +23,7 @@
 import NavigationBackground from './components/Navigation/NavigationBackground.vue';
 import NavigationBar from './components/Navigation/NavigationBar.vue';
 import Logo from './components/Navigation/Logo.vue';
+import LinkButton from './components/Navigation/LinkButton.vue';
 
 export default {
   name: 'App',
@@ -25,6 +31,7 @@ export default {
     NavigationBackground,
     NavigationBar,
     Logo,
+    LinkButton,
   },
   created() {
     this.$refs.NaviContentHomepage.SetContent('Homepage');
@@ -53,7 +60,12 @@ export default {
 }
 
 #nav a.router-link-exact-active {
-  color: #ee1a72;
+  color: #e24b25;
+}
+
+#nav a:hover {
+  color: #e24b25;
+  background: #2c3e50;
 }
 
 .navigation#homepage {
