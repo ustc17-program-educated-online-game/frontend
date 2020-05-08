@@ -1,5 +1,7 @@
 <template>
-  <router-link :to="address" :style="{left: left}" class="LinkButton">{{content}}</router-link>
+  <router-link :to="address" :style="{left: left}" class="LinkButton">
+    <div class="content">{{content}}</div>
+  </router-link>
 </template>
 
 <script>
@@ -22,5 +24,10 @@ export default {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+
+.content {
+  position: relative;
+  top: 28%;
 }
 </style>
