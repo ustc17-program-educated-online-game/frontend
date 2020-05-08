@@ -2,11 +2,6 @@
   <div id="app">
     <div id="nav">
       <!-- The followings are the navigations in the top of our website -->
-      <Trapezoid
-        class="navigation"
-        id="homepage"></Trapezoid>
-      <LeftTrapezoid class="navigation" id="game"></LeftTrapezoid>
-      <RightTrapezoid class="navigation" id="map"></RightTrapezoid>
       <router-link to="/" id="HomepageRouter">Homepage</router-link>
       <router-link to="/GameInterface" id="GameRouter">GameInterface</router-link>
       <router-link to="/MapEditor" id="MapRouter">MapEditor</router-link>
@@ -16,16 +11,10 @@
 </template>
 
 <script>
-import Trapezoid from './components/Homepage/Trapezoid.vue';
-import LeftTrapezoid from './components/Homepage/LeftTrapezoid.vue';
-import RightTrapezoid from './components/Homepage/RightTrapezoid.vue';
 
 export default {
   name: 'App',
   components: {
-    Trapezoid,
-    LeftTrapezoid,
-    RightTrapezoid,
   },
   created() {
     this.$refs.NaviContentHomepage.SetContent('Homepage');
