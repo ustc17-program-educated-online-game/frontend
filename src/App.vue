@@ -62,7 +62,7 @@ export default {
 
 #nav a:hover {
   color: #e24b25;
-  background: #2c3e50;
+  background: #39db6f;
 }
 
 .navigation#homepage {

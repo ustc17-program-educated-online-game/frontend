@@ -16,7 +16,7 @@ export default {
   top: 0%;
   height: 6.35%;
   width: 8%;
-  background-color: #36f4ab;
+  background-color: blanchedalmond;
   color: white;
   padding: 14px 14px;
   text-align: center;
