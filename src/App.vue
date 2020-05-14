@@ -44,10 +44,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   top: 0%;
-}
-
-#nav {
-  padding: 30px;
+  margin: 0%;
 }
 
 #nav a {
