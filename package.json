@@ -12,7 +12,10 @@
     "bootstrap-vue": "^2.14.0",
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
+<<<<<<< HEAD
     "vue-custom-scrollbar": "^1.2.0",
+=======
+>>>>>>> c69d58df34e8ecb470158c54bc027a257942bdc1
     "vue-router": "^3.1.6",
     "vuedraggable": "^2.23.2"
   },
