@@ -74,13 +74,13 @@ export default {
         },
         {
           id: 4,
-          name: 'task 4',
+          name: 'turn left',
           tasks: [],
           embeded: false,
         },
         {
           id: 5,
-          name: 'task 5',
+          name: 'turn right',
           tasks: [],
           embeded: false,
         },
@@ -118,7 +118,8 @@ export default {
 </script>
 <style>
 .PlayerCode {
-  width: 100%;
+  width: 500%;
+  height: 500%;
 }
 .CodeArea {
   width: 200%;
@@ -140,7 +141,7 @@ export default {
   height: 10%;
 }
 .scroll-area {
-  width: 84%;
+  width: 80%;
   height: 100%;
   background-color: rgb(87, 180, 187);
 }
