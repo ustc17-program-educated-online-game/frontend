@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <p
-            :style="el.embeded? embeded : normal"
+            :style="(el.embeded || el.extrainfo)? embeded : normal"
             class="list-group-item list-group-item-success name"
           >
             {{ el.name }}
@@ -14,18 +14,24 @@
             v-if="el.embeded"
           >
             <div class="inspect">
-              inspect()
+              front
             </div>
-            <select id="inputState" class="relation">
-              <option selected>==</option>
-              <option>!=</option>
+            <select id="relation" class="relation">
+              <option selected value="1">==</option>
+              <option value="2">!=</option>
             </select>
-            <select id="inputState" class="right-value">
-              <option selected>Blank</option>
-              <option>Obstacle</option>
-              <option>Treasure</option>
-              <option>Edge</option>
+            <select id="val" class="right-value">
+              <option selected value="1">Blank</option>
+              <option value="2">Obstacle</option>
+              <option value="3">Treasure</option>
+              <option value="4">Edge</option>
             </select>
+          </div>
+          <div
+            class=""
+            v-else-if="el.extrainfo"
+          >
+            <input type="text" class="extrainfo" value="1">
           </div>
         </div>
       </div>
@@ -55,6 +61,7 @@ export default {
         width: '100px',
         padding: '0',
         margin: '0',
+        height: '55px',
       },
     };
   },
@@ -85,15 +92,20 @@ export default {
 .relation {
   position: absolute;
   top: 20%;
-  left: 35%;
+  left: 25%;
   width: 20%;
   height: 60%;
 }
 .right-value {
   position: absolute;
   top: 20%;
-  left: 60%;
-  width: 30%;
+  left: 50%;
+  width: 45%;
   height: 60%;
+}
+.extrainfo {
+  position: relative;
+  left: 17%;
+  height: 55px;
 }
 </style>

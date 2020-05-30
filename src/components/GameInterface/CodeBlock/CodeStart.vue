@@ -25,12 +25,18 @@
     >
       <div class="row PlayerCode">
         <div class="CodeArea bg-info">
-          <nested-draggable :tasks="list" />
+          <nested-draggable :tasks="list" id="codes"/>
         </div>
       </div>
     </vue-custom-scrollbar>
 
-    <button type="button" class="btn btn-primary btn-start">Start</button>
+    <button
+      type="button"
+      class="btn btn-primary btn-start"
+      @click="getAllCodes()"
+    >
+      Start
+    </button>
   </div>
 </template>
 
@@ -59,42 +65,42 @@ export default {
           name: 'if',
           tasks: [],
           embeded: true,
+          extrainfo: false,
         },
         {
           id: 2,
-          name: 'loop',
+          name: 'while',
           tasks: [],
           embeded: true,
+          extrainfo: false,
         },
         {
           id: 3,
           name: 'go',
           tasks: [],
           embeded: false,
+          extrainfo: true,
         },
         {
           id: 4,
           name: 'turn left',
           tasks: [],
           embeded: false,
+          extrainfo: false,
         },
         {
           id: 5,
           name: 'turn right',
           tasks: [],
           embeded: false,
+          extrainfo: false,
         },
         {
           id: 6,
-          name: 'task 5',
+          name: 'open',
           tasks: [],
           embeded: false,
-        },
-        {
-          id: 7,
-          name: 'task 5',
-          tasks: [],
-          embeded: false,
+          extrainfo: false,
         },
       ],
       list: [],
@@ -104,14 +110,94 @@ export default {
     log(evt) {
       window.console.log(evt);
     },
-    cloneCode({ name, embeded }) {
+    cloneCode({ name, embeded, extrainfo }) {
       idGlobal += 1;
       return {
         id: idGlobal,
         name,
         tasks: [],
         embeded,
+        extrainfo,
       };
+    },
+    getCodes(object, codeslist) {
+      let newcodes = codeslist;
+      if (object.className === 'list-group-item list-group-item-success name') {
+        if (newcodes !== '') {
+          newcodes += ',{';
+        } else {
+          newcodes = '{';
+        }
+        if (object.innerText === 'if') {
+          newcodes += '"condition":{';
+          // add relation to newcodes
+          newcodes += '"expression":';
+          let relation = object.nextSibling.children[1];
+          relation = relation.options[relation.selectedIndex].value;
+          newcodes += relation;
+          // add relation val to newcodes
+          newcodes += ',"val":';
+          let val = object.nextSibling.children[2];
+          val = val.options[val.selectedIndex].value;
+          newcodes += val;
+          // add codes part to newcodes
+          newcodes += ',"codes":[';
+          let codes = object.parentNode.parentNode.nextSibling;
+          // eslint-disable-next-line prefer-destructuring
+          codes = codes.children[0].children[0].children[0].children[0];
+          codes = this.getCodes(codes, '');
+          newcodes += codes;
+          newcodes += ']}';
+          newcodes += '}';
+        } else if (object.innerText === 'while') {
+          newcodes += '"circulate":{';
+          // add relation to newcodes
+          newcodes += '"expression":';
+          let relation = object.nextSibling.children[1];
+          relation = relation.options[relation.selectedIndex].value;
+          newcodes += relation;
+          // add relation val to newcodes
+          newcodes += ',"val":';
+          let val = object.nextSibling.children[2];
+          val = val.options[val.selectedIndex].value;
+          newcodes += val;
+          // add codes part to newcodes
+          newcodes += ',"codes":[';
+          let codes = object.parentNode.parentNode.nextSibling;
+          // eslint-disable-next-line prefer-destructuring
+          codes = codes.children[0].children[0].children[0].children[0];
+          codes = this.getCodes(codes, '');
+          newcodes += codes;
+          newcodes += ']}';
+          newcodes += '}';
+        } else if (object.innerText === 'go') {
+          newcodes += `"${object.innerText}":"`;
+          // eslint-disable-next-line no-console
+          newcodes += object.nextSibling.children[0].value;
+          newcodes += '"}';
+        } else {
+          newcodes += `"${object.innerText}":"1"}`;
+        }
+        let next = object.parentNode.parentNode.parentNode.nextSibling;
+        if (next !== null) {
+          // eslint-disable-next-line prefer-destructuring
+          next = next.children[0].children[0].children[0];
+          newcodes = this.getCodes(next, newcodes);
+        }
+      }
+      return newcodes;
+    },
+    getAllCodes() {
+      let FirstSentence = document.getElementById('codes').children[0];
+      // eslint-disable-next-line prefer-destructuring
+      FirstSentence = FirstSentence.children[0].children[0].children[0];
+      let codesstring = this.getCodes(FirstSentence, '');
+      codesstring = `{"codes":[${codesstring}]}`;
+      // eslint-disable-next-line no-console
+      console.log(codesstring);
+      const codes = JSON.parse(codesstring);
+      // eslint-disable-next-line no-console
+      console.log(codes);
     },
   },
 };
