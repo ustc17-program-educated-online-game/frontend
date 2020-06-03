@@ -2,14 +2,15 @@
   <div id="app">
     <div id="nav">
       <!-- The followings are the navigations in the top of our website -->
-      <navigation-background></navigation-background>
+      <navigation></navigation>
+      <!-- <navigation-background></navigation-background>
       <navigation-bar></navigation-bar>
       <logo></logo>
-      <link-button address="/Homepage" content="主页" left="35%"></link-button>
+      <link-button address="/" content="主页" left="35%"></link-button>
       <link-button address="/GameInterface" content="游戏" left="45%"></link-button>
       <link-button address="/MapEditor" content="地图编辑器" left="55%"></link-button>
       <link-button address="/" content="注册" left="80%"></link-button>
-      <link-button address="/" content="登录" left="90%"></link-button>
+      <link-button address="/" content="登录" left="90%"></link-button> -->
     </div>
     <router-view/>
   </div>
@@ -17,18 +18,20 @@
 
 <script>
 // the followings are importng part of the navigation part
-import NavigationBackground from './components/Navigation/NavigationBackground.vue';
-import NavigationBar from './components/Navigation/NavigationBar.vue';
-import Logo from './components/Navigation/Logo.vue';
-import LinkButton from './components/Navigation/LinkButton.vue';
+// import NavigationBackground from './components/Navigation/NavigationBackground.vue';
+// import NavigationBar from './components/Navigation/NavigationBar.vue';
+import Navigation from './components/Navigation/Navigation.vue';
+// import Logo from './components/Navigation/Logo.vue';
+// import LinkButton from './components/Navigation/LinkButton.vue';
 
 export default {
   name: 'App',
   components: {
-    NavigationBackground,
-    NavigationBar,
-    Logo,
-    LinkButton,
+    // NavigationBackground,
+    // NavigationBar,
+    // Logo,
+    // LinkButton,
+    Navigation,
   },
   created() {
     this.$refs.NaviContentHomepage.SetContent('Homepage');
