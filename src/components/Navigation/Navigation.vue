@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-show = "state === 0">
+        <div v-show = "DataSet.state">
             欢迎
         </div>
 
@@ -53,12 +53,15 @@ export default {
       },
     };
   },
-  created() {
+  mounted() {
+    // eslint-disable-next-line no-console
+    console.log(LoginTest);
     this.DataSet = LoginTest;
     // eslint-disable-next-line no-console
-    // console.log(this.DataSet.state);
+    console.log(this.DataSet.state);
   },
   /* components: {
     LoginTest,
   }, */
 };
+</script>
