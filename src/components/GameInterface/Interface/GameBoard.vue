@@ -21,7 +21,9 @@
       :x=DataSet.map.character.x
       :y=DataSet.map.character.y
       :state=DataSet.map.character.state
-      ></character>
+      ref="character"
+      >
+    </character>
   </div>
 </template>
 
@@ -34,7 +36,6 @@ export default {
   name: 'GameBoard',
   data() {
     return {
-      test: 10,
       DataSet: {
         state: String,
         message: String,
@@ -87,6 +88,43 @@ export default {
       this.map = {
         id: mapid,
       };
+    },
+    takeAction(action) {
+      if (action === 'goUp') {
+        this.DataSet.map.character.x = String(Number(this.DataSet.map.character.x) - 1);
+      } else if (action === 'goDown') {
+        this.DataSet.map.character.x = String(Number(this.DataSet.map.character.x) + 1);
+      } else if (action === 'goLeft') {
+        this.DataSet.map.character.y = String(Number(this.DataSet.map.character.y) - 1);
+      } else if (action === 'goRight') {
+        this.DataSet.map.character.y = String(Number(this.DataSet.map.character.y) + 1);
+      } else if (action === 'turnLeft') {
+        if (this.DataSet.map.character.state === 'u') {
+          this.DataSet.map.character.state = 'l';
+        } else if (this.DataSet.map.character.state === 'r') {
+          this.DataSet.map.character.state = 'u';
+        } else if (this.DataSet.map.character.state === 'd') {
+          this.DataSet.map.character.state = 'r';
+        } else if (this.DataSet.map.character.state === 'l') {
+          this.DataSet.map.character.state = 'd';
+        }
+      } else if (action === 'turnRight') {
+        if (this.DataSet.map.character.state === 'u') {
+          this.DataSet.map.character.state = 'r';
+        } else if (this.DataSet.map.character.state === 'r') {
+          this.DataSet.map.character.state = 'd';
+        } else if (this.DataSet.map.character.state === 'd') {
+          this.DataSet.map.character.state = 'l';
+        } else if (this.DataSet.map.character.state === 'l') {
+          this.DataSet.map.character.state = 'u';
+        }
+      } else if (action === 'collectSuccess') {
+        // eslint-disable-next-line no-console
+        console.log('success');
+      } else if (action === 'collectFail') {
+        // eslint-disable-next-line no-console
+        console.log('success');
+      }
     },
   },
 };

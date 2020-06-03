@@ -28,10 +28,26 @@
     },
     "character": {
       "type": "1", 
-      "x": "4",
-      "y": "2",
+      "x": "2",
+      "y": "1",
       "state": "u" 
     }
   }, 
-  "actionList": "goUp"
+  "actionList": [
+    "turnRight",
+    "goUp",
+    "turnRight",
+    "goDown",
+    "turnRight",
+    "isBlank",
+    "isObstacle",
+    "turnLeft",
+    "isTreasure",
+    "isEdge",
+    "goLeft",
+    "turnRight",
+    "goRight",
+    "collectSuccess",
+    "endMissionFail"
+  ]
 }

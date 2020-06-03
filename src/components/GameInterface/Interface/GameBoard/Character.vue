@@ -1,6 +1,14 @@
 <template>
-  <div :style="Character">
-    character
+  <div
+    class="Character"
+    :style="{
+      left: (y/length) * 100 + 3 + '%',
+      top: (x/width) * 100 + 3 + '%',
+      width: (1/length) * 80 + '%',
+      height: (1/width) * 60 + '%'
+    }"
+  >
+    character -- {{state}}
   </div>
 </template>
 
@@ -15,25 +23,13 @@ export default {
     width: String,
     length: String,
   },
-  data() {
-    const valueLeft = `${(this.x / this.width) * 100 + 3}%`;
-    const valueRight = `${(this.y / this.length) * 100 + 3}%`;
-    const blockWidth = `${(1 / this.length) * 80}%`;
-    const blockHeight = `${(1 / this.width) * 60}%`;
-    return {
-      Character: {
-        position: 'absolute',
-        left: valueRight,
-        top: valueLeft,
-        width: blockWidth,
-        height: blockHeight,
-        padding: '15px',
-        'background-color': 'white',
-      },
-    };
-  },
 };
 </script>
 
 <style>
+.Character {
+  position: absolute;
+  padding: '15px';
+  background-color: white;
+}
 </style>

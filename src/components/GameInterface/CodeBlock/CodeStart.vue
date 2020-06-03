@@ -44,6 +44,7 @@
 import draggable from 'vuedraggable';
 import vueCustomScrollbar from 'vue-custom-scrollbar';
 import nestedDraggable from './NestedDraggable.vue';
+import testJSON from '../Interface/test.json';
 
 let idGlobal = 0;
 
@@ -56,6 +57,7 @@ export default {
   },
   data() {
     return {
+      actions: null,
       settings: {
         maxScrollbarLength: 160,
       },
@@ -198,6 +200,32 @@ export default {
       const codes = JSON.parse(codesstring);
       // eslint-disable-next-line no-console
       console.log(codes);
+      this.getActions();
+    },
+    getActions() {
+      let i = 0;
+      const actions = testJSON.actionList;
+      const loop = setInterval(() => {
+        if (actions[i] !== 'endMissionSuccess' && actions[i] !== 'endMissionFail') {
+          while (actions[i] === 'isBlank' || actions[i] === 'isObstacle' || actions[i] === 'isTreasure' || actions[i] === 'isEdge') {
+            i += 1;
+          }
+          this.takeActions(actions[i]);
+          i += 1;
+        } else {
+          clearInterval(loop);
+        }
+      }, 1000);
+      if (actions[i] === 'endMissionSuccess') {
+        // eslint-disable-next-line no-console
+        console.log('success');
+      } else if (actions[i] === 'endMissionFail') {
+        // eslint-disable-next-line no-console
+        console.log('fail');
+      }
+    },
+    takeActions(action) {
+      this.$emit('takeAction', action);
     },
   },
 };

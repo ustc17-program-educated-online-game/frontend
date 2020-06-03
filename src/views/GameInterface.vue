@@ -1,9 +1,16 @@
 <template>
   <div class="GameInterface">
-    <game-board></game-board>
+    <game-board
+      ref="GameBoard"
+    >
+    </game-board>
     <check-point-info></check-point-info>
     <game-tools></game-tools>
-    <code-start></code-start>
+    <code-start
+      @takeAction="test($event)"
+      ref="code-block"
+    >
+    </code-start>
   </div>
 </template>
 
@@ -20,6 +27,11 @@ export default {
     GameBoard,
     CheckPointInfo,
     GameTools,
+  },
+  methods: {
+    test(event) {
+      this.$refs.GameBoard.takeAction(event);
+    },
   },
 };
 </script>
