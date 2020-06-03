@@ -5,7 +5,7 @@
       <navigation-background></navigation-background>
       <navigation-bar></navigation-bar>
       <logo></logo>
-      <link-button address="/" content="主页" left="35%"></link-button>
+      <link-button address="/Homepage" content="主页" left="35%"></link-button>
       <link-button address="/GameInterface" content="游戏" left="45%"></link-button>
       <link-button address="/MapEditor" content="地图编辑器" left="55%"></link-button>
       <link-button address="/" content="注册" left="80%"></link-button>

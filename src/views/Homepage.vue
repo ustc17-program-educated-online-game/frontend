@@ -1,13 +1,18 @@
 <template>
   <div class="home">
-    Homepage
+    <cards></cards>
   </div>
+  <!---->
 </template>
 
 <script>
 // @ is an alias to /src
+import Cards from '../components/Homepage/Cards.vue';
 
 export default {
-  name: 'Home',
+  name: 'HomePage',
+  components: {
+    Cards,
+  },
 };
 </script>
