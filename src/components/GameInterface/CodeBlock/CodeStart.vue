@@ -214,15 +214,15 @@ export default {
           i += 1;
         } else {
           clearInterval(loop);
+          if (actions[i] === 'endMissionSuccess') {
+            // eslint-disable-next-line no-console
+            console.log('success');
+          } else if (actions[i] === 'endMissionFail') {
+            // eslint-disable-next-line no-console
+            console.log('fail');
+          }
         }
       }, 1000);
-      if (actions[i] === 'endMissionSuccess') {
-        // eslint-disable-next-line no-console
-        console.log('success');
-      } else if (actions[i] === 'endMissionFail') {
-        // eslint-disable-next-line no-console
-        console.log('fail');
-      }
     },
     takeActions(action) {
       this.$emit('takeAction', action);
