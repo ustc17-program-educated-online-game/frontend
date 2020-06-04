@@ -127,5 +127,6 @@ export default {
   width: 55%;
   height:90%;
   background-color: #fff;
+  box-shadow: 6px 6px 3px #888888;
 }
 </style>
