@@ -41,7 +41,6 @@ export default {
   position: absolute;
   top: 10%;
   left: 0%;
-  background-color: rgb(134, 87, 29);
   width: 100%;
   height: 90%;
 }

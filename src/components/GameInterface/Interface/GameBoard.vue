@@ -135,8 +135,8 @@ export default {
   position: absolute;
   top: 0%;
   left: 0%;
-  width: 60%;
-  height: 80%;
+  width: 85vh;
+  height: 85vh;
   background-color: #fff;
 }
 </style>

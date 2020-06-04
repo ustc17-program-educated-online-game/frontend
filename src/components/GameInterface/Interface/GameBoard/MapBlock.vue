@@ -9,7 +9,7 @@
           Start
         </div>
         <div v-else>
-          Empty
+          <img src="../../../../img/grass.jpg">
         </div>
       </div>
       <div class="Obstacle" v-else-if="state == 2" :style="InnerBlock">
@@ -60,13 +60,13 @@ export default {
         top: valueLeft,
         width: blockWidth,
         height: blockHeight,
-        padding: '15px',
+        padding: '0',
         'padding-color': 'red',
       },
       InnerBlock: {
         width: '100%',
         height: '100px',
-        padding: '30px',
+        padding: '0',
         'padding-color': 'red',
       },
     };
@@ -76,7 +76,6 @@ export default {
 
 <style>
 .BackDiv {
-  background-color: rgb(216, 81, 81);
   padding: 10px;
 }
 .Empty {
@@ -90,5 +89,9 @@ export default {
 }
 .Destination {
   background-color: rgb(80, 214, 39);
+}
+img {
+  width:100%;
+  height: 100%;
 }
 </style>

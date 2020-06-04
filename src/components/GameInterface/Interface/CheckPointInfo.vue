@@ -12,8 +12,9 @@ export default {
 
 <style>
 .CheckPointInfo {
+  display: none;
   position: absolute;
-  top: 80%;
+  top: 92%;
   left: 0%;
   width: 30%;
   height: 20%;

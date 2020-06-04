@@ -12,11 +12,12 @@ export default {
 
 <style>
 .GameTools {
+  display: none;
   position: absolute;
-  top: 80%;
+  top: 92%;
   left: 30%;
   width: 30%;
-  height: 20%;
+  height: 8%;
   background-color: rgb(117, 182, 182);
 }
 </style>
