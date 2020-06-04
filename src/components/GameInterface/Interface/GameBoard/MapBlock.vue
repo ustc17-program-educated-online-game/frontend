@@ -1,6 +1,9 @@
 <template>
   <div class="BackDiv" :style="BlockPosition">
     <div class="Empty" v-if="state == 1">
+      <div class="Character" v-if="x == character.x && y == character.y">
+        <img src="../../../../img/character.jpg">
+      </div>
       <span class="decription" v-if="x == end.x && y == end.y">
         Destination
       </span>
@@ -42,6 +45,12 @@ export default {
       x: String,
       y: String,
     },
+    character: {
+      type: String,
+      x: String,
+      y: String,
+      state: String,
+    },
   },
   data() {
     const valueLeft = `${(this.x / this.width) * 100}%`;
@@ -66,6 +75,13 @@ export default {
 .Treasure {
   width: 100%;
   height: 100%;
+}
+.Character {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  width: 40%;
+  height: 50%;
 }
 .Empty {
   background: url("../../../../img/grass.jpg") no-repeat;

@@ -10,27 +10,17 @@
           :y=index2
           :start=DataSet.map.start
           :end=DataSet.map.end
+          :character=DataSet.map.character
           >
         </map-block>
       </div>
     </div>
-    <character
-      :type=DataSet.map.character.type
-      :length=DataSet.map.length
-      :width=DataSet.map.width
-      :x=DataSet.map.character.x
-      :y=DataSet.map.character.y
-      :state=DataSet.map.character.state
-      ref="character"
-      >
-    </character>
   </div>
 </template>
 
 <script>
 import TestJson from './test.json';
 import MapBlock from './GameBoard/MapBlock.vue';
-import Character from './GameBoard/Character.vue';
 
 export default {
   name: 'GameBoard',
@@ -74,7 +64,6 @@ export default {
   },
   components: {
     MapBlock,
-    Character,
   },
   methods: {
     getMap(mapid) {
