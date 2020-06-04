@@ -1,7 +1,7 @@
 <template>
   <div class="BackDiv" :style="BlockPosition">
     <div class="Empty" v-if="state == 1">
-      <div class="Character" v-if="x == character.x && y == character.y">
+      <div class="Character-show" v-if="x == character.x && y == character.y">
         <img src="../../../../img/character.jpg">
       </div>
       <span class="decription" v-if="x == end.x && y == end.y">
@@ -76,7 +76,7 @@ export default {
   width: 100%;
   height: 100%;
 }
-.Character {
+.Character-show {
   position: absolute;
   top: 25%;
   left: 30%;

@@ -33,9 +33,6 @@ export default {
     // LinkButton,
     Navigation,
   },
-  created() {
-    this.$refs.NaviContentHomepage.SetContent('Homepage');
-  },
 };
 </script>
 

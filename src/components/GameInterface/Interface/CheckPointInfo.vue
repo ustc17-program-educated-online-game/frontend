@@ -1,23 +1,45 @@
 <template>
-  <div class="CheckPointInfo">
-    <p>this is CheckPointInfo</p>
+  <div>
+    <button type="button" class="c btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Check
+    </button>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
 <style>
-.CheckPointInfo {
-  display: none;
+.c {
   position: absolute;
-  top: 92%;
-  left: 0%;
-  width: 30%;
-  height: 20%;
-  background-color: rgb(160, 44, 44);
+  top: 20%;
+  left: 0;
 }
 </style>
