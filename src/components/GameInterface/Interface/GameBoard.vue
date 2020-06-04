@@ -1,5 +1,5 @@
 <template>
-  <div class="GameBoard">
+  <div class="GameBoard border border-primary rounded">
     <div v-for="(states, index1) in DataSet.map.state" :key="index1">
       <div v-for="(state, index2) in states" :key="index2">
         <map-block
@@ -133,10 +133,10 @@ export default {
 <style>
 .GameBoard {
   position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 85vh;
-  height: 85vh;
+  top: 3%;
+  left: 10%;
+  width: 55%;
+  height:90%;
   background-color: #fff;
 }
 </style>

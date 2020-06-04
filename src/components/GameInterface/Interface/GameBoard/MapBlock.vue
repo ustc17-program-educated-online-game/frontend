@@ -1,31 +1,26 @@
 <template>
-  <div>
-    <div class="BackDiv" :style="BlockPosition">
-      <div class="Empty" v-if="state == 1" :style="InnerBlock">
-        <div v-if="x == end.x && y == end.y">
-          Destination
-        </div>
-        <div v-else-if="x == start.x && y == start.y">
-          Start
-        </div>
-        <div v-else>
-          <img src="../../../../img/grass.jpg">
-        </div>
-      </div>
-      <div class="Obstacle" v-else-if="state == 2" :style="InnerBlock">
-        Obstacle
-      </div>
-      <div class="Treasure" v-else :style="InnerBlock">
-        <div v-if="x == end.x && y == end.y">
-          Destination
-        </div>
-        <div v-else-if="x == start.x && y == start.y">
-          Start
-        </div>
-        <div v-else>
-          Treasure
-        </div>
-      </div>
+  <div class="BackDiv" :style="BlockPosition">
+    <div class="Empty" v-if="state == 1">
+      <span class="decription" v-if="x == end.x && y == end.y">
+        Destination
+      </span>
+      <span class="decription" v-else-if="x == start.x && y == start.y">
+        Start
+      </span>
+    </div>
+    <div class="Obstacle" v-else-if="state == 2">
+      Obstacle
+    </div>
+    <div class="Treasure" v-else>
+      <span v-if="x == end.x && y == end.y">
+        Destination
+      </span>
+      <span v-else-if="x == start.x && y == start.y">
+        Start
+      </span>
+      <span v-else>
+        Treasure
+      </span>
     </div>
   </div>
 </template>
@@ -51,23 +46,14 @@ export default {
   data() {
     const valueLeft = `${(this.x / this.width) * 100}%`;
     const valueRight = `${(this.y / this.length) * 100}%`;
-    const blockWidth = `${(1 / this.length) * 100}%`;
-    const blockHeight = `${(1 / this.width) * 100}%`;
     return {
       BlockPosition: {
         position: 'absolute',
         left: valueRight,
         top: valueLeft,
-        width: blockWidth,
-        height: blockHeight,
+        width: '12.5%',
+        height: '12.5%',
         padding: '0',
-        'padding-color': 'red',
-      },
-      InnerBlock: {
-        width: '100%',
-        height: '100px',
-        padding: '0',
-        'padding-color': 'red',
       },
     };
   },
@@ -75,11 +61,15 @@ export default {
 </script>
 
 <style>
-.BackDiv {
-  padding: 10px;
+.Empty,
+.Obstacle,
+.Treasure {
+  width: 100%;
+  height: 100%;
 }
 .Empty {
-  background-color: rgb(124, 216, 185);
+  background: url("../../../../img/grass.jpg") no-repeat;
+  background-size: cover;
 }
 .Obstacle {
   background-color: rgb(99, 74, 21);

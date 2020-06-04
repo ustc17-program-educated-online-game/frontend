@@ -214,15 +214,15 @@ export default {
           i += 1;
         } else {
           clearInterval(loop);
-          if (actions[i] === 'endMissionSuccess') {
-            // eslint-disable-next-line no-console
-            console.log('success');
-          } else if (actions[i] === 'endMissionFail') {
-            // eslint-disable-next-line no-console
-            console.log('fail');
-          }
         }
       }, 1000);
+      if (actions[i] === 'endMissionSuccess') {
+        // eslint-disable-next-line no-console
+        console.log('success');
+      } else if (actions[i] === 'endMissionFail') {
+        // eslint-disable-next-line no-console
+        console.log('fail');
+      }
     },
     takeActions(action) {
       this.$emit('takeAction', action);
@@ -242,7 +242,7 @@ export default {
 .CodeBlock {
   position: absolute;
   top: 0%;
-  left: 60%;
+  left: 70%;
   width: 40%;
   height: 100%;
   margin: 0%;
