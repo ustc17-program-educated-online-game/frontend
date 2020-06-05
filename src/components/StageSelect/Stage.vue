@@ -8,6 +8,7 @@
                 第一关描述
             </b-card-text>
             <b-button href="#">开始游戏</b-button>
+            <b-button href="#">讨论区</b-button>
             </b-card>
 
             <b-card title="第二关" img-src="https://placekitten.com/g/200/200"
@@ -16,6 +17,7 @@
                 第二关描述
             </b-card-text>
             <b-button href="#">开始游戏</b-button>
+            <b-button href="#">讨论区</b-button>
             </b-card>
 
             <b-card title="第三关" img-src="https://placekitten.com/g/200/200"
@@ -24,6 +26,7 @@
                 第三关描述
             </b-card-text>
             <b-button href="#">开始游戏</b-button>
+            <b-button href="#">讨论区</b-button>
             </b-card>
 
         </b-card-group>
@@ -37,6 +40,7 @@
                 第四关描述
             </b-card-text>
             <b-button href="#">开始游戏</b-button>
+            <b-button href="#">讨论区</b-button>
             </b-card>
 
             <b-card title="第五关" img-src="https://placekitten.com/g/200/200"
@@ -45,6 +49,7 @@
                 第五关描述
             </b-card-text>
             <b-button href="#">开始游戏</b-button>
+            <b-button href="#">讨论区</b-button>
             </b-card>
 
             <b-card title="第六关" img-src="https://placekitten.com/g/200/200"
@@ -53,6 +58,7 @@
                 第六关描述
             </b-card-text>
             <b-button href="#">开始游戏</b-button>
+            <b-button href="#">讨论区</b-button>
             </b-card>
 
         </b-card-group>
