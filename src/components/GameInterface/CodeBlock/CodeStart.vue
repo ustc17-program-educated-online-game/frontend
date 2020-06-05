@@ -242,21 +242,21 @@ export default {
 .CodeBlock {
   position: absolute;
   top: 0%;
-  left: 70%;
-  width: 30%;
+  left: 66%;
+  width: 34%;
   height: 100%;
   margin: 0%;
 }
 .btn-start {
   position: absolute;
   left: 0%;
-  bottom: 0%;
-  width: 15.6%;
-  height: 10%;
+  bottom: 5px;
+  width: 20%;
 }
 .scroll-area {
-  width: 80%;
+  width: 79%;
   height: 100%;
   background-color: rgb(87, 180, 187);
+  border-radius: 3px;
 }
 </style>

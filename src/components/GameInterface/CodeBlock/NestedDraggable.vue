@@ -74,11 +74,10 @@ export default {
 <style scoped>
 .dragArea {
   min-height: 50px;
-  outline: 1px dashed;
   width: 400px;
 }
 .condition {
-  left: 50px;
+  left: 0px;
   height: 55px;
   padding: 0px;
   width: 300px;
@@ -100,12 +99,17 @@ export default {
   position: absolute;
   top: 20%;
   left: 50%;
-  width: 45%;
+  width: 41%;
   height: 60%;
 }
 .extrainfo {
   position: relative;
-  left: 17%;
+  left: 0%;
   height: 55px;
+  width:100px;
+}
+.name {
+  background: wheat;
+  border-radius: 3px;
 }
 </style>
