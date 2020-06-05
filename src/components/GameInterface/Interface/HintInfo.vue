@@ -1,14 +1,14 @@
 <template>
   <div class="card card-info" v-if="visible">
     <div class="card-header">
-      关卡信息
+      提示信息
     </div>
     <div class="card-body">
       <h5 class="card-title">第一关</h5>
       <div
       class="card-text"
       >
-      desc</div>
+      hint</div>
       <a @click="visible=false" class="btn btn-outline-danger close-info">关闭</a>
     </div>
   </div>

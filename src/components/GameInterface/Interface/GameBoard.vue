@@ -122,11 +122,10 @@ export default {
 <style>
 .GameBoard {
   position: absolute;
-  top: 3%;
-  left: 10%;
+  top: 1.4%;
+  left: 7.5%;
   width: 55%;
   height:90%;
-  background-color: #fff;
   box-shadow: 6px 6px 3px #888888;
 }
 </style>
