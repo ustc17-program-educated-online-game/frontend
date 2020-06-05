@@ -2,7 +2,7 @@
   <draggable class="dragArea" tag="ul" :list="tasks" :group="{ name: 'people' }">
     <li v-for="el in tasks" :key="el.id">
       <div class="container">
-        <div class="row">
+        <div class="row name-box">
           <p
             :style="(el.embeded || el.extrainfo)? embeded : normal"
             class="list-group-item list-group-item-success name"
@@ -52,16 +52,16 @@ export default {
   data() {
     return {
       normal: {
-        width: '400px',
+        width: '200px',
         padding: '0',
         margin: '0',
-        height: '50px',
+        height: '45px',
       },
       embeded: {
         width: '100px',
         padding: '0',
         margin: '0',
-        height: '55px',
+        height: '45px',
       },
     };
   },
@@ -73,12 +73,12 @@ export default {
 </script>
 <style scoped>
 .dragArea {
-  min-height: 50px;
+  min-height: 45px;
   width: 400px;
 }
 .condition {
   left: 0px;
-  height: 55px;
+  height: 45px;
   padding: 0px;
   width: 300px;
 }
@@ -105,11 +105,12 @@ export default {
 .extrainfo {
   position: relative;
   left: 0%;
-  height: 55px;
+  height: 45px;
   width:100px;
 }
 .name {
-  background: wheat;
+  background: rgba(245, 222, 179, 0.945);
   border-radius: 3px;
+  text-align: center;
 }
 </style>
