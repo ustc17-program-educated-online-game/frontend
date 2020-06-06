@@ -14,17 +14,17 @@
             v-if="el.embeded"
           >
             <div class="inspect">
-              front
+              前方
             </div>
             <select id="relation" class="relation">
               <option selected value="1">==</option>
               <option value="2">!=</option>
             </select>
             <select id="val" class="right-value">
-              <option selected value="1">Blank</option>
-              <option value="2">Obstacle</option>
-              <option value="3">Treasure</option>
-              <option value="4">Edge</option>
+              <option selected value="1">空地</option>
+              <option value="2">障碍</option>
+              <option value="3">宝藏</option>
+              <option value="4">边缘</option>
             </select>
           </div>
           <div
