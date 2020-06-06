@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Homepage from '../views/Homepage.vue';
 import GameInterface from '../views/GameInterface.vue';
 import MapEditor from '../views/MapEditor.vue';
+import StageSelect from '../views/StageSelect.vue';
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/MapEditor',
     name: '地图编辑器',
     component: MapEditor,
+  },
+  {
+    path: '/StageSelect',
+    name: '关卡选择',
+    component: StageSelect,
   },
 ];
 
