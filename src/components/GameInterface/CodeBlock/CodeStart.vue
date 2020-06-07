@@ -130,7 +130,7 @@ export default {
         } else {
           newcodes = '{';
         }
-        if (object.innerText === 'if') {
+        if (object.innerText === '如果') {
           newcodes += '"condition":{';
           // add relation to newcodes
           newcodes += '"expression":';
@@ -151,7 +151,7 @@ export default {
           newcodes += codes;
           newcodes += ']}';
           newcodes += '}';
-        } else if (object.innerText === 'while') {
+        } else if (object.innerText === '当') {
           newcodes += '"circulate":{';
           // add relation to newcodes
           newcodes += '"expression":';
@@ -172,13 +172,17 @@ export default {
           newcodes += codes;
           newcodes += ']}';
           newcodes += '}';
-        } else if (object.innerText === 'go') {
-          newcodes += `"${object.innerText}":"`;
+        } else if (object.innerText === '走') {
+          newcodes += '"go":"';
           // eslint-disable-next-line no-console
           newcodes += object.nextSibling.children[0].value;
           newcodes += '"}';
-        } else {
-          newcodes += `"${object.innerText}":"1"}`;
+        } else if (object.innerText === '向左转') {
+          newcodes += '"turnleft": "1"}';
+        } else if (object.innerText === '向右转') {
+          newcodes += '"turnright": "1"}';
+        } else if (object.innerText === '打开') {
+          newcodes += '"open": "1"}';
         }
         let next = object.parentNode.parentNode.parentNode.nextSibling;
         if (next !== null) {
