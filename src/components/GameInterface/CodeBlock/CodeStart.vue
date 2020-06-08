@@ -37,6 +37,18 @@
     >
       Start
     </button>
+    <button
+      type="button"
+      class="btn btn-danger btn-single"
+    >
+      单步执行
+    </button>
+    <button
+      type="button"
+      class="btn btn-warning btn-clear"
+    >
+      清空
+    </button>
   </div>
 </template>
 
@@ -253,9 +265,21 @@ export default {
 }
 .btn-start {
   position: absolute;
-  left: 0%;
+  left: -1%;
   bottom: 5px;
-  width: 20%;
+  width: 18%;
+}
+.btn-single {
+  position: absolute;
+  left: -1%;
+  bottom: 44px;
+  width: 18%;
+}
+.btn-clear {
+  position: absolute;
+  left: -1%;
+  bottom: 84px;
+  width: 18%;
 }
 .scroll-area {
   width: 79%;

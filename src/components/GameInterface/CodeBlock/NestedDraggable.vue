@@ -85,7 +85,7 @@ export default {
 .inspect {
   position: absolute;
   top: 20%;
-  width: 10%;
+  width: 20%;
   left: 5%;
 }
 .relation {
