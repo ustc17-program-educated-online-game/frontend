@@ -11,7 +11,7 @@
           :start=DataSet.map.start
           :end=DataSet.map.end
           :character=DataSet.map.character
-          >
+        >
         </map-block>
       </div>
     </div>
@@ -60,7 +60,7 @@ export default {
     };
   },
   created() {
-    this.DataSet = TestJson;
+    this.DataSet = JSON.parse(JSON.stringify(TestJson));
   },
   components: {
     MapBlock,
@@ -114,6 +114,9 @@ export default {
         // eslint-disable-next-line no-console
         console.log('success');
       }
+    },
+    clear() {
+      this.DataSet = JSON.parse(JSON.stringify(TestJson));
     },
   },
 };

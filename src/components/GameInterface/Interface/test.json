@@ -37,18 +37,9 @@
     }
   }, 
   "actionList": [
-    "turnRight",
     "goUp",
-    "turnRight",
-    "goDown",
-    "turnRight",
-    "isBlank",
-    "isObstacle",
-    "turnLeft",
-    "isTreasure",
-    "isEdge",
     "goLeft",
-    "turnRight",
+    "goDown",
     "goRight",
     "collectSuccess",
     "endMissionFail"

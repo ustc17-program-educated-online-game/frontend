@@ -33,19 +33,21 @@
     <button
       type="button"
       class="btn btn-primary btn-start"
-      @click="getAllCodes()"
+      @click="getAllCodes('continue')"
     >
       Start
     </button>
     <button
       type="button"
       class="btn btn-danger btn-single"
+      @click="getAllCodes('onestep')"
     >
       单步执行
     </button>
     <button
       type="button"
       class="btn btn-warning btn-clear"
+      @click="clear()"
     >
       清空
     </button>
@@ -69,6 +71,7 @@ export default {
   },
   data() {
     return {
+      step: 0,
       actions: null,
       settings: {
         maxScrollbarLength: 160,
@@ -205,7 +208,7 @@ export default {
       }
       return newcodes;
     },
-    getAllCodes() {
+    getAllCodes(mode) {
       let FirstSentence = document.getElementById('codes').children[0];
       // eslint-disable-next-line prefer-destructuring
       FirstSentence = FirstSentence.children[0].children[0].children[0];
@@ -216,32 +219,49 @@ export default {
       const codes = JSON.parse(codesstring);
       // eslint-disable-next-line no-console
       console.log(codes);
-      this.getActions();
+      this.getActions(mode);
     },
-    getActions() {
-      let i = 0;
+    getActions(mode) {
+      let i = this.step;
       const actions = testJSON.actionList;
-      const loop = setInterval(() => {
-        if (actions[i] !== 'endMissionSuccess' && actions[i] !== 'endMissionFail') {
-          while (actions[i] === 'isBlank' || actions[i] === 'isObstacle' || actions[i] === 'isTreasure' || actions[i] === 'isEdge') {
+      if (mode === 'continue') {
+        const loop = setInterval(() => {
+          if (actions[i] !== 'endMissionSuccess' && actions[i] !== 'endMissionFail') {
+            while (actions[i] === 'isBlank' || actions[i] === 'isObstacle' || actions[i] === 'isTreasure' || actions[i] === 'isEdge') {
+              i += 1;
+            }
+            this.takeActions(actions[i]);
             i += 1;
+          } else {
+            clearInterval(loop);
+            if (actions[i] === 'endMissionSuccess') {
+              // eslint-disable-next-line no-console
+              console.log('success');
+            } else if (actions[i] === 'endMissionFail') {
+              // eslint-disable-next-line no-console
+              console.log('fail');
+            }
           }
-          this.takeActions(actions[i]);
-          i += 1;
-        } else {
-          clearInterval(loop);
+        }, 1000);
+      } else if (mode === 'onestep') {
+        this.takeActions(actions[this.step]);
+        this.step += 1;
+        if (actions[this.step] === 'endMissionSuccess') {
+          // eslint-disable-next-line no-console
+          console.log('success');
+        } else if (actions[this.step] === 'endMissionFail') {
+          // eslint-disable-next-line no-console
+          console.log('fail');
         }
-      }, 1000);
-      if (actions[i] === 'endMissionSuccess') {
-        // eslint-disable-next-line no-console
-        console.log('success');
-      } else if (actions[i] === 'endMissionFail') {
-        // eslint-disable-next-line no-console
-        console.log('fail');
       }
     },
     takeActions(action) {
       this.$emit('takeAction', action);
+    },
+    clear() {
+      this.list = [];
+      this.step = 0;
+      this.$emit('clear');
     },
   },
 };

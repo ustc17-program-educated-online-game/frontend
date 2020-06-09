@@ -7,7 +7,8 @@
     <check-point-info ref="CheckInfo"></check-point-info>
     <hint-info ref="HintInfo"></hint-info>
     <code-start
-      @takeAction="test($event)"
+      @takeAction="takeAction($event)"
+      @clear="clear()"
       ref="code-block"
     >
     </code-start>
@@ -36,8 +37,11 @@ export default {
     HintInfo,
   },
   methods: {
-    test(event) {
+    takeAction(event) {
       this.$refs.GameBoard.takeAction(event);
+    },
+    clear() {
+      this.$refs.GameBoard.clear();
     },
     ShowCheckInfo() {
       this.$refs.CheckInfo.visible = true;
