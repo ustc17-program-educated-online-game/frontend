@@ -9,7 +9,6 @@
       <label> y </label>
       <input :id="inputType" v-model.number="position.y" placeholder="0">
     </div>
-    ({{position.x}},{{position.y}})
   </div>
 </template>
 
@@ -47,8 +46,8 @@ export default {
 
 <style scoped>
 .position-setter {
-  margin: 10px 10px 10px 10px;
-  padding: 9px;
+  margin: 10px 0 10px 10px;
+  padding: 0;
   background: #ffffff;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
